@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>
+            Excel file upload and processing 
+        </title>
+    </head>
+    <body style="margin-top: 30px;margin-left: 30px;">
+        <h1 style="font-size:40px;margin-left: 525px;" >Excel Tool Engen</h1>
+        <form action="{% url "myapp:index" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3>Please Enter if its an inbound or an outbound setup</h3>
+            <input type="radio" id="inbound" name="Sheetselection" value="INBOUND Files to HMHS">
+            <label for="html">Inbound</label>
+            <input type="radio" id="outbound" name="Sheetselection" value="OUTBOUND Files to External">
+            <label for="css">Outbound</label><br>
+            
+            
+            <input type="file"
+                   title="Upload excel file"
+                   name="excel_file"
+                   style="border: 1px solid black; padding: 5px;"
+                   required="required">
+            <p>
+            <input type="submit"
+                   value="Upload"
+                   style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+        </form>
+
+        <p></p>
+        
+    </body>
+</html>
